@@ -1,0 +1,10 @@
+<h1>Article: <%= @article.title %></h1>
+<h2>Author: <%= @article.editor.username %></h2>
+
+<p><%= @article.content %></p>
+<p>
+  Categories:
+  <% @article.categories.each do |category| %>
+    <%= link_to category.name, category_path(category) %>
+  <% end %>
+</p>
