@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root '#index'
 root to: 'categories#index'
+
   resources :articles
   resources :categories
   resources :users
