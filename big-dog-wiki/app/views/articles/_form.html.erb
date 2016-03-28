@@ -6,13 +6,15 @@
   </ul>
   <p>
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => 'ckeditor' %>
   </p>
   <p>
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => 'ckeditor' %>
   </p>
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+
+
