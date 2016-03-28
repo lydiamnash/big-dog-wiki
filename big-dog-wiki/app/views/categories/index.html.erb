@@ -1,18 +1,19 @@
 <div class="categories-container see-through">
-  <h1>Big Dog Wiki</h1>
+ 
+  <span class="jumbo thicker">Big Dog Wiki</span>
   =======
-  <h1>All Categories</h1>
+  <span class="thicker title">All Categories</span>
 
-  <ul id="categories">
+  <ul id="thicker subtitle">
     <% @categories.each do |category| %>
-      <li>
-        <%= link_to category.name, category_path(category) %>
+      <li class="eachcat">
+        <%= link_to category.name, category_path(category), class: "each-category thicker info" %>
 
       </li>
     <% end %>
   </ul>
 
 
-  <%= link_to "Create a New Category", new_category_path, class: "new_category" %>
+  <%= link_to "Create a New Category", new_category_path, class: "new_category subtitle" %>
 </div>
 
