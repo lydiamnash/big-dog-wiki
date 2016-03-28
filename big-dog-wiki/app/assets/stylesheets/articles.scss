@@ -1,8 +1,13 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .see-through {
   width: 600px;
   height: 100%;
   background-color:rgba(0, 0, 0, 0.8);
+}
+
+.thicker {
+    font-weight: 900;
 }

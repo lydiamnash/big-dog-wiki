@@ -1,8 +1,10 @@
-<h1>Category: <%= @category.name %></h1>
+<div class="category-container see-through">
+  <h1>Category: <%= @category.name %></h1>
 
-<p>
-  Articles:
-  <% @category.articles.each do |article| %>
-    <%= link_to article.title, article_path(article) %>
-  <% end %>
-</p>
+  <p>
+    Articles:
+    <% @category.articles.each do |article| %>
+      <%= link_to article.title, article_path(article) %>
+    <% end %>
+  </p>
+</div>
