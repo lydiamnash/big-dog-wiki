@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'categories#index'
+  # root '#index'
+root to: 'categories#index'
 
   resources :articles
   resources :categories
