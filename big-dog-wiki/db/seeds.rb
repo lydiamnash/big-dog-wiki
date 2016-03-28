@@ -11,7 +11,7 @@
   user = User.create!(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "password", clearance: "editor")
 
     3.times do
-      article = user.articles.create!(title: Faker::Lorem.word, content: Faker::Lorem.paragraph(2), published: true)
+      article = Article.create!(title: Faker::Lorem.word, content: Faker::Lorem.paragraph(2), published: true, editor: user)
         
       3.times do
         article.sources.create!(url: Faker::Internet.url)
