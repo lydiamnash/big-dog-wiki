@@ -8,7 +8,19 @@
 </head>
 <body>
 
-<%= yield %>
 
+
+ <div id = "header"><a href = "/"><h3> Big Dog Wiki </h3></a>
+  <a href = "/articles/new">new</a> |
+  <!-- <a href = ""></a> |
+  <a href = ""></a> | -->
+  <%if current_user%>
+  <a href = "/users/<%=current_user.id%>"><%=current_user.username%></a> | <a href = "/logout">logout</a>
+  <%else%>
+  <a href = "/login">login</a> | <a href = "/signup">register</a>
+  <%end%>
+</div>
+
+<%= yield %>
 </body>
 </html>
