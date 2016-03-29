@@ -19,8 +19,21 @@
 
   </div>
 
+  <div class="section content">
 
-  <div class="article-content content"><%= @article.content %></div>
+    <h2> Table of Contents: </h2>
+    <ul>
+
+      <% @sections.each do |section| %>
+
+        <li> <a href="http://localhost:3000/articles/<%=@article.id.to_s%>#<%= section %>"> <%= section %> </a></li>
+
+      <% end %>
+    </ul>
+
+  </div>
+
+  <div class="article-content content"><%= @article.content.html_safe %></div>
 
   <div class="sources">
     <span class="subtitle thicker">Sources:</span><br><br>
@@ -32,7 +45,14 @@
 
   </div>
 
-
-  <p class="edit-article info thicker"> <%= link_to 'Edit Article', edit_article_path(@article) %></p>
+  <% if current_user %>
+    <p class="edit-article info thicker"> <%= link_to 'Edit Article', edit_article_path(@article) %></p>
+  <% else %>
+    <br>
+    <br>
+    <br>
+    <p>Log in to edit!</p>
+    <img src="https://media.giphy.com/media/UQDmnGZNm9Blu/giphy.gif">
+  <% end %>
 
 </div>
