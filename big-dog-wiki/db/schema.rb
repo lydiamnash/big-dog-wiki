@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(version: 20160329150327) do
   create_table "versions", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.boolean  "published"
+    t.boolean  "published",  default: false
     t.integer  "article_id"
     t.integer  "editor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "versions", ["article_id"], name: "index_versions_on_article_id", using: :btree

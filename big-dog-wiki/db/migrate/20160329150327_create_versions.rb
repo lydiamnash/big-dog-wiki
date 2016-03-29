@@ -3,7 +3,7 @@ class CreateVersions < ActiveRecord::Migration
     create_table :versions do |t|
       t.string :title
       t.text :content
-      t.boolean :published
+      t.boolean :published, default: false
       t.references :article, index: true
       t.references :editor, index: true
 
