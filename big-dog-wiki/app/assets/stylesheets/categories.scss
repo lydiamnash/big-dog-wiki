@@ -2,10 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-ul .eachcat {
+.indextitle {
+  padding: 20px;
+}
+
+.cats {
+  -webkit-column-count: 2;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.eachcat {
   padding-bottom: 15px;
 }
 
-.indextitle {
+.new_category {
+background-color:rgba(#9C3108, 0.8);
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.categories-container {
+  padding-bottom: 50px;
+  background-color:rgba(0, 0, 0, 0.8);
+  background-size: cover;}
+
+.category-container {
+  padding-bottom: 600px;
+  padding-top: 30px;
+}
+
+.category-articles {
+  padding-top: 30px;
+}
+
+.cat-arts {
+  -webkit-column-count: 2;
+  padding-bottom: 30px;
   padding-top: 30px;
 }

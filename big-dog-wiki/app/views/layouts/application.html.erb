@@ -6,11 +6,13 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<center>
+<body class="bg">
 
 
 
- <div id = "header" class="see-through"><a href = "/"><span class="jumbo thicker">Big Dog Wiki</span></a>
+ <div id = "header" class="see-through nav info"><a href = "/">
+ <span class="jumbo thicker">Big Dog Wiki</span></a>
   <a href = "/articles/new">new</a> |
   <!-- <a href = ""></a> |
   <a href = ""></a> | -->
@@ -23,4 +25,5 @@
 
 <%= yield %>
 </body>
+</center>
 </html>
