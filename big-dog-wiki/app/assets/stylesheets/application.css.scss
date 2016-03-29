@@ -15,7 +15,10 @@
  */
 
  body {
-  background-image: image-url("big-dog.jpg");
-  background-size: cover;
   color: white;
  }
+
+.bg {
+  background-image: image-url("bigger-dog.jpg");
+  background-size: cover;
+}

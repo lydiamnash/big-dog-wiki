@@ -6,9 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<center>
+<body class="bg">
+
+
+
+ <div id = "header" class="see-through nav info"><a href = "/">
+ <span class="jumbo thicker">Big Dog Wiki</span></a>
+  <a href = "/articles/new">new</a> |
+  <!-- <a href = ""></a> |
+  <a href = ""></a> | -->
+  <%if current_user%>
+  <a href = "/users/<%=current_user.id%>"><%=current_user.username%></a> | <a href = "/logout">logout</a>
+  <%else%>
+  <a href = "/login">login</a> | <a href = "/signup">register</a>
+  <%end%>
+</div>
 
 <%= yield %>
-
 </body>
+</center>
 </html>

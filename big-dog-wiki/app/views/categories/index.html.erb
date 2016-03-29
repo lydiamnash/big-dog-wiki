@@ -1,18 +1,23 @@
+<div class="categories-container see-through">
+  
+  <div class="feature thicker subtitle">
+    Featured Article:
+    <%= link_to "#{featured_article.title}", article_path(featured_article) %>
+  </div>
+  
+  <div class="indextitle thicker title">All Categories</div>
 
-<h1>Big Dog Wiki</h1>
-=======
-<h1>All Categories</h1>
+  <div class="cats" id="thicker subtitle">
+    <% @categories.each do |category| %>
+      <div class="eachcat">
+        <%= link_to category.name, category_path(category), class: "each-category thicker info" %>
 
-<ul id="categories">
-  <% @categories.each do |category| %>
-    <li>
-      <%= link_to category.name, category_path(category) %>
-
-    </li>
-  <% end %>
-</ul>
+      </div>
+    <% end %>
+  </div>
 
 
-<%= link_to "Create a New Category", new_category_path, class: "new_category" %>
+  <%= link_to " Create a New Category ", new_category_path, class: "new_category" %>
 
+</div>
 
