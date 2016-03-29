@@ -1,17 +1,3 @@
-<h1>Article: <%= @article.title %></h1>
-<h2>Author: <%= @article.editor.username %></h2>
-
-<p><%= @article.content.html_safe %></p>
-
-<p>
-  Categories:
-  <% @article.categories.each do |category| %>
-    <%= link_to category.name, category_path(category) %>
-  <% end %>
-</p>
-
-<p> <%= link_to 'Edit Article', edit_article_path(@article) %></p>
-
 <div class="article-container see-through center">
 
 
