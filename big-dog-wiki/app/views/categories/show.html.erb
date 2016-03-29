@@ -5,12 +5,18 @@
     <%= @category.name %> Articles:
       <div class="cat-arts subtitle">
 
-        <% @category.articles.each do |article| %>
-          <% if article.published %>
+      <!-- We need to only grab the last one, push it into an array, then loop over and display the article -->
+
+        <% @category.versions.where(published: true).each do |article| %>
             <%= link_to article.title, article_path(article) %>
-          <% end %>
         <% end %>
 
       </div>
   </div>
 </div>
+
+
+<!-- model tests -->
+<!-- add features -->
+<!-- feature tests -->
+<!-- at very least test article creation -->

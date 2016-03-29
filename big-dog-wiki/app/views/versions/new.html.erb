@@ -1,5 +1,5 @@
 <div class="form-container">
   <div class="title thicker"> Edit Article </div>
-  <%= render partial: 'form' %>
+  <%= render partial: 'form', locals: { article: @article, version: @version } %>
 
 </div>

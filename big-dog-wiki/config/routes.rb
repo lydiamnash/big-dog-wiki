@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   # root '#index'
 root to: 'categories#index'
 
-  resources :articles
+  resources :articles do
+    resources :versions
+  end
+
   resources :categories
   resources :users
 
@@ -14,7 +17,7 @@ root to: 'categories#index'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get "/signup" => "users#new"
+  get '/signup' => 'users#new'
   post 'users' => 'users#create'
 
   # Example of regular route:
