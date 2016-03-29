@@ -19,6 +19,7 @@
  }
 
 .bg {
-  background-image: image-url("bigger-dog.jpg");
+  background-image: image-url("big-dog.jpg");
   background-size: cover;
+  background-attachment: fixed;
 }

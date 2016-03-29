@@ -6,26 +6,34 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-3.times do 
-
+3.times do
   user = User.create!(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "password", clearance: "editor")
 
+  3.times do
+    article = Article.create!(creator: user)
+    version = article.versions.create!(title: Faker::Lorem.word, content: Faker::Lorem.paragraph(2), published: true, article: article, editor: user)
+
     3.times do
-      article = Article.create!(title: Faker::Lorem.word, content: Faker::Lorem.paragraph(2), published: true, editor: user)
-        
-      3.times do
-        article.sources.create!(url: Faker::Internet.url)
-      end
-
-      3.times do
-        article.categories.create!(name: Faker::StarWars.planet)
-      end
-
+      version.sources.create!(url: Faker::Internet.url)
     end
+
+    3.times do
+      version.categories.create!(name: Faker::StarWars.planet)
+    end
+  end
 
 end
 
+9.times do
+  version = Version.create!(title: Faker::Lorem.word, content: Faker::Lorem.paragraph(2), published: true, article: Article.find(rand(1..9)), editor: User.find(rand(1..3)) )
+
+  3.times do
+    version.sources.create!(url: Faker::Internet.url)
+  end
+
+  3.times do
+    version.categories.create!(name: Faker::StarWars.planet)
+  end
+end
+
 User.create!(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "password", clearance: "admin")
-
-
-#  NEED TO ADD IMAGE SEEDS
