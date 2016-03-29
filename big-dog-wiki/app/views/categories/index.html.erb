@@ -1,17 +1,18 @@
 <div class="categories-container see-through">
  
-  <span class="thicker title indextitle">All Categories</span>
+  <div class="indextitle thicker title">All Categories</div>
 
-  <ul id="thicker subtitle">
+  <div class="cats" id="thicker subtitle">
     <% @categories.each do |category| %>
-      <li class="eachcat">
+      <div class="eachcat">
         <%= link_to category.name, category_path(category), class: "each-category thicker info" %>
 
-      </li>
+      </div>
     <% end %>
-  </ul>
+  </div>
 
 
-  <%= link_to "Create a New Category", new_category_path, class: "new_category subtitle" %>
+  <%= link_to " Create a New Category ", new_category_path, class: "new_category" %>
+
 </div>
 

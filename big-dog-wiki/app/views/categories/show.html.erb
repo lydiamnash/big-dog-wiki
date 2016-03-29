@@ -1,10 +1,16 @@
 <div class="category-container see-through">
-  <span class="title thicker">Category: <%= @category.name %></span>
+<!--   <span class="title thicker">Category: <%= @category.name %></span> -->
 
-  <div class="subtitle thicker category-articles">
-    Articles:
-    <% @category.articles.each do |article| %>
-      <%= link_to article.title, article_path(article) %>
-    <% end %>
+  <div class="title thicker category-articles">
+    <%= @category.name %> Articles:
+      <div class="cat-arts subtitle">
+
+        <% @category.articles.each do |article| %>
+            
+          <%= link_to article.title, article_path(article) %>
+
+        <% end %>
+
+      </div>
   </div>
 </div>

@@ -5,12 +5,12 @@
   <% end %>
   </ul>
   <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title, :class => 'ckeditor' %>
+    <%= f.label :title, :class => 'subtitle form-title' %><br />
+    <%= f.text_field :title, :class => 'ckeditor form-title' %>
   </p>
   <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content, :class => 'ckeditor' %>
+    <%= f.label :content, :class => 'subtitle form-content' %><br />
+    <%= f.text_area :content, :class => 'ckeditor form-content' %>
   </p>
   <p>
     <%= f.submit %>
