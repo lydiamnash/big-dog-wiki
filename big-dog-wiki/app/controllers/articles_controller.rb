@@ -7,6 +7,14 @@ end
 
   def show
     @article = Article.find(params[:id])
+    doc = Nokogiri::HTML.fragment(@article.content)
+    @sections = []
+    doc.css('h3').each do |h3|
+      @sections << h3.content
+      h3["id"] = h3.content
+    end
+
+    @article.content = doc
   end
 
   def new

@@ -19,6 +19,19 @@
 
   </div>
 
+  <div class="section content">
+
+    <h2> Table of Contents: </h2>
+    <ul>
+
+      <% @sections.each do |section| %>
+
+        <li> <a href="http://localhost:3000/articles/<%=@article.id.to_s%>#<%= section %>"> <%= section %> </a></li>
+
+      <% end %>
+    </ul>
+
+  </div>
 
   <div class="article-content content"><%= @article.content.html_safe %></div>
 
