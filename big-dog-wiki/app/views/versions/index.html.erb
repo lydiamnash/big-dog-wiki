@@ -1,0 +1,12 @@
+<% if @all_versions %>
+<!-- REMOVE INLINE STYLING CAUSE IT'S TERRIBLE -->
+  <ul style="color:black">
+    <% @all_versions.each do |version| %>
+
+      <!-- Date/time needs formatting -->
+
+      <li><%= version.title %> <%= link_to 'View here', article_version_path(version.article_id, version)%>, As of: <%= version.created_at %> </li>
+
+    <% end %>
+  </ul>
+<% end %>

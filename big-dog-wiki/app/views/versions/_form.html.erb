@@ -1,22 +1,17 @@
-<%= form_for(@article) do |f| %>
+<%= form_for [article, version] do |f| %>
   <ul>
-  <% @article.errors.full_messages.each do |error| %>
+  <% version.errors.full_messages.each do |error| %>
     <li><%= error %></li>
   <% end %>
   </ul>
   <p>
     <%= f.label :title, :class => 'subtitle form-title' %><br />
-    <%= f.text_field :title, :class => 'ckeditor form-title' %>
+    <%= f.text_field :title, :class => 'ckeditor form-title', :value => article.latest_version.title %>
   </p>
   <p>
     <%= f.label :content, :class => 'subtitle form-content' %><br />
-    <%= f.text_area :content, :class => 'ckeditor form-content' %>
+    <%= f.text_area :content, :class => 'ckeditor form-content', :value => article.latest_version.content %>
   </p>
-
-  <!-- Add category functionality -->
-
-  <!-- Publish button not working -->
-
 
   <div class="published-button subtitle">
     <%= f.label "Publish?" %> <br />

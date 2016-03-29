@@ -1,0 +1,57 @@
+<div class="article-container see-through center">
+
+  <h3>Version of <%= @version.article.latest_version.title %>: </h3>
+  <p>As of: <%= @version.created_at %></p>
+
+  <span class="article-title title thicker"> <%= @version.title %> </span>
+
+
+
+  <span class="article-editor info thicker"> Author: <%= @version.editor.username %> </span>
+
+
+  <div class="article-categories">
+
+    <span class="info thicker"> Categories: </span>
+
+    <% @version.categories.each do |category| %>
+
+      <span class="content thicker"> <%= link_to category.name, category_path(category) %> </span>
+
+    <% end %>
+
+  </div>
+
+  <div class="section content">
+
+    <h2> Table of Contents: </h2>
+    <ul>
+
+      <% @sections.each do |section| %>
+
+        <li> <a href="http://localhost:3000/articles/<%=@version.article_id.to_s%>#<%= section %>"> <%= section %> </a></li>
+
+      <% end %>
+    </ul>
+
+  </div>
+
+  <div class="article-content content"><%= @version.content.html_safe %></div>
+
+  <div class="sources">
+    <span class="subtitle thicker">Sources:</span><br><br>
+    <% @version.sources.each do |source| %>
+
+      <span class="content thicker each-source"> <%= link_to source.url, "http://#{source.url}"%> </span><br>
+
+    <% end %>
+
+  </div>
+
+  <img src="https://media.giphy.com/media/UQDmnGZNm9Blu/giphy.gif">
+
+
+  <p>See all previous versions of this article <%= link_to 'here', article_versions_path(@version.article_id)%></p>
+
+</div>
+
