@@ -1,5 +1,10 @@
 <div class="categories-container see-through">
- 
+  
+  <div class="feature thicker subtitle">
+    Featured Article:
+    <%= link_to "#{featured_article.title}", article_path(featured_article) %>
+  </div>
+  
   <div class="indextitle thicker title">All Categories</div>
 
   <div class="cats" id="thicker subtitle">
