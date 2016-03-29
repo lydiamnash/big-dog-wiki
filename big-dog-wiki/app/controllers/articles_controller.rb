@@ -10,16 +10,33 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @pic = @article.pictures.new
   end
 
   def create
 
-    @article = Article.new(article_params)
-    # @article.user = current_user
-    @article.save
-    # flash.notice = "Article '#{@article.title}' Created!"
+  @article = Article.new(article_params)
+
+  respond_to do |format|
+    if @article.save
+
+      if params[:images]
+        #===== The magic is here ;)
+        params[:images].each { |image|
+          @article.pictures.create(image: image)
+        }
+      end
+
+      format.html { redirect_to @article, notice: 'Gallery was successfully created.' }
+      format.json { render json: @article, status: :created, location: @article }
+    else
+      format.html { render action: "new" }
+      format.json { render json: @article.errors, status: :unprocessable_entity }
+    end
+
     redirect_to article_path(@article)
   end
+end
 
   def destroy
     article = Article.find(params[:id])
@@ -31,6 +48,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+
   end
 
   def update
@@ -43,7 +61,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :body, :tag_list, :image)
+    params.require(:article).permit(:title, :content)
   end
 
 end

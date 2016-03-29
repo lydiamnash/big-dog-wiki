@@ -1,3 +1,17 @@
+<h1>Article: <%= @article.title %></h1>
+<h2>Author: <%= @article.editor.username %></h2>
+
+<p><%= @article.content.html_safe %></p>
+
+<p>
+  Categories:
+  <% @article.categories.each do |category| %>
+    <%= link_to category.name, category_path(category) %>
+  <% end %>
+</p>
+
+<p> <%= link_to 'Edit Article', edit_article_path(@article) %></p>
+
 <div class="article-container see-through center">
 
 
@@ -12,7 +26,7 @@
     <span class="info thicker"> Categories: </span>
 
     <% @article.categories.each do |category| %>
-      
+
       <span class="content thicker"> <%= link_to category.name, category_path(category) %> </span>
 
     <% end %>
@@ -21,17 +35,17 @@
 
 
   <div class="article-content content"><%= @article.content %></div>
-  
+
   <div class="sources">
     <span class="subtitle thicker">Sources:</span><br><br>
     <% @article.sources.each do |source| %>
-      
+
       <span class="content thicker each-source"> <%= link_to source.url, "http://#{source.url}"%> </span><br>
 
     <% end %>
 
   </div>
-  
+
 
   <p class="edit-article info thicker"> <%= link_to 'Edit Article', edit_article_path(@article) %></p>
 
