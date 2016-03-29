@@ -9,3 +9,9 @@ before_script:
 - bundle exec rake db:create RAILS_ENV=test
 - bundle exec rake db:migrate
 - bundle exec rake db:test:prepare
+deploy:
+  provider: heroku
+  api_key:
+    secure: vxLnXeq7Lh+4FeHp8j3wJ4VDuGFjFv0o93w+LOTasgvMBuAum0KsewyP9nJDcgfmMnBVCHkcHLi8lwzka4gJaSOCQxUTk4eKL7+NemEKg/+n8LMG0gjQLEs+U75WVoiT6N62/AOBUG1SCoc/aNQBIrtMr7uxiWqDocDuurVdQfk2qU9s22mp24qAXpUbsSvOvQoZYHc80rdlnuvAS/oQ1IOR77ZiqIs93q9cmoDK0gQZrGEdgSmlRiwgBYMACkmfjzmeOueByWmtPAqTGk9iZXOPZ2sQz1KkPvRve3AcQjGcED6FQ+mileNWwYJARfjJmlLVrhH5KLMwAmV1jZQgfhSd9EU2nfGIwMQTXsCr0/JDQUPgw6XjH+rSqfhLUFbFzaRuICjyp3Wr5LK/4J/82W1ZUmTz4UhYdycz0AJtXb/AOZB0z8aST1s50s6Og/hClpjQ/fnjEi195dLl3WQ5QYFtRe5b2+CQNrdnmS7ftyXdMB3/FDdd4b2S/WKdkK8cXYfqQtCJqkBNKNvUdGfpCCAvuaHRunP23T5dT1CNIn8uZ2YgUv9GQgvhZ+AVbfQjF+j//yUVuhyG+GtHLxDuvGMiTbPfWVxPqy4SVp6WcGSX8zfTcr3RNrJ4AxuBDWQtlZlGGa9U3GoHmCtdrSXY54RJYqCaEqHtcopoJB67jl4=
+  app: bigdogwiki
+  run: "bundle exec rake db:migrate"
