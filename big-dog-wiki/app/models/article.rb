@@ -3,6 +3,5 @@ class Article < ActiveRecord::Base
 
   has_many :categorizations
   has_many :categories, through: :categorizations
-  has_many :images
   has_many :sources
 end

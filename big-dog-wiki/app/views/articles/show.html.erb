@@ -1,7 +1,8 @@
 <h1>Article: <%= @article.title %></h1>
 <h2>Author: <%= @article.editor.username %></h2>
 
-<p><%= @article.content %></p>
+<p><%= @article.content.html_safe %></p>
+
 <p>
   Categories:
   <% @article.categories.each do |category| %>
