@@ -6,9 +6,9 @@
       <div class="cat-arts subtitle">
 
         <% @category.articles.each do |article| %>
-            
-          <%= link_to article.title, article_path(article) %>
-
+          <% if article.published %>
+            <%= link_to article.title, article_path(article) %>
+          <% end %>
         <% end %>
 
       </div>

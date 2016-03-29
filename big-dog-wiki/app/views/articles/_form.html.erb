@@ -12,6 +12,14 @@
     <%= f.label :content, :class => 'subtitle form-content' %><br />
     <%= f.text_area :content, :class => 'ckeditor form-content' %>
   </p>
+
+  <!-- Publish button not working -->
+
+
+  <div class="published-button subtitle"> 
+    <%= f.label "Publish?" %> <br />
+    <%= f.check_box :published %> <br />
+  </div>
   <p>
     <%= f.submit %>
   </p>
