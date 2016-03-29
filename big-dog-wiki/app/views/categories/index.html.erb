@@ -1,5 +1,15 @@
 <div class="categories-container see-through">
-  
+
+  <div class="search">
+    <%= search_form_for @search do |f| %>
+
+    Search articles<br>
+    <%= f.label :title %>
+    <%= f.search_field :title_cont %>
+
+    <%= f.submit %>
+    <% end %>
+  </div>
   <div class="feature thicker subtitle">
     Featured Article:
     <%= link_to "#{featured_article.title}", article_path(featured_article) %>
