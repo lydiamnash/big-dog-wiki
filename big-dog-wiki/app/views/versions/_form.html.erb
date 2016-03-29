@@ -13,6 +13,13 @@
     <%= f.text_area :content, :class => 'ckeditor form-content', :value => article.latest_version.content %>
   </p>
 
+<!-- Would be nice to have the sources display better -->
+
+  <p>
+    <%= f.label :sources, :class => 'subtitle form-content' %>
+    <%= f.text_field :sources, :class => 'ckeditor form-title', :value => version_sources(article) %>
+  </p>
+
   <div class="published-button subtitle">
     <%= f.label "Publish?" %> <br />
     <%= f.check_box :published %> <br />
