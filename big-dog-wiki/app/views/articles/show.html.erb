@@ -32,7 +32,14 @@
 
   </div>
 
-
-  <p class="edit-article info thicker"> <%= link_to 'Edit Article', edit_article_path(@article) %></p>
+  <% if current_user %>
+    <p class="edit-article info thicker"> <%= link_to 'Edit Article', edit_article_path(@article) %></p>
+  <% else %>
+    <br>
+    <br>
+    <br>
+    <p>Log in to edit!</p>
+    <img src="https://media.giphy.com/media/UQDmnGZNm9Blu/giphy.gif">
+  <% end %>
 
 </div>
