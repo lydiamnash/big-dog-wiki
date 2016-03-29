@@ -9,6 +9,7 @@ root to: 'categories#index'
   resources :articles do
     resources :versions
   end
+
   resources :categories
   resources :users
 
