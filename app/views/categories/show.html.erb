@@ -8,7 +8,7 @@
       <!-- We need to only grab the last one, push it into an array, then loop over and display the article -->
 
         <% @category_articles.each do |version| %>
-            <%= link_to version.title, article_version_path(version.article_id, version) %>
+            <%= link_to version.title, article_path(version.article_id) %>
         <% end %>
 
       </div>
