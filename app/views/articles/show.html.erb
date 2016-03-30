@@ -2,10 +2,13 @@
 
 
   <span class="page-title title thicker"> Article: <%= @current_version.title %> </span>
-
-
-
   <span class="article-editor info thicker"> Author: <%= @current_version.editor.username %> </span>
+
+  <% if current_user.clearance == "admin" %>
+    <br><br>
+    <span class="thicker"> Admin privileges: </span>
+    <%= link_to "Delete", article_path(@current_version.article), method: :delete  %>
+  <% end %>
 
   <div class="article-categories">
 
@@ -26,7 +29,7 @@
 
       <% @sections.each do |section| %>
 
-        <li> <a href="http://localhost:3000/articles/<%=@current_version.article_id.to_s%>#<%= section %>"> <%= section %> </a></li>
+        <li><%= link_to section, article_path(@current_version.article, anchor: section) %></li>
 
       <% end %>
     </ul>

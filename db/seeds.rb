@@ -54,4 +54,4 @@ end
 
 Version.create!(title: Faker::Lorem.word, content: Faker::Lorem.paragraph(2), published: false, article: Article.find(1), editor: User.find(rand(1..3)) )
 
-User.create!(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "password", clearance: "admin")
+User.create!(username: "bigdog", email: "bigdog@bigdog.bigdog", password: "bigdog", clearance: "admin")

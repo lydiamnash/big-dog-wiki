@@ -1,7 +1,7 @@
 <div class="user-container see-through center">
   <span class="page-title title thicker"> <%= @user.username %>'s User Page </span><br><br>
 
-  <div class="user-box subtitle thicker"> <%= @user.username %>'s Unpublished Work: 
+  <div class="user-box subtitle thicker"> <%= @user.username %>'s Unpublished Work:
 
   <% if @user.versions %>
     <div class="cat-arts">
@@ -15,8 +15,8 @@
 
 
 
-  <div class="user-box subtitle thicker"> <%= @user.username %>'s Published Work: 
-  
+  <div class="user-box subtitle thicker"> <%= @user.username %>'s Published Work:
+
     <% if @user.versions %>
       <div class="cat-arts">
         <% @user.versions.where(published: true).each do |version| %>
@@ -26,4 +26,22 @@
     <% end %>
 
   </div>
+
+  <div class="user-box subtitle thicker">
+    <% if current_user.clearance == "admin" %>
+      <br><br>
+      <h3>Users:</h3>
+      <ul>
+        <% User.all.each do |user| %>
+          <li><%= user.username %></li>
+          <% if user.clearance == "moderator" %>
+            <a href="#">Demote to editor</a>
+          <% if else user.clearance == "editor"%>
+            <a href="#">Promote to moderator</a>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
 </div>
