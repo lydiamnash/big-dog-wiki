@@ -1,3 +1,7 @@
+20.times do
+  Category.find_or_create_by!(name: Faker::StarWars.planet)
+end
+
 3.times do
 
   user = User.create!(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "password", clearance: "editor")
@@ -25,7 +29,7 @@
     end
 
     3.times do
-      version.categories.create!(name: Faker::StarWars.planet)
+      version.categorizations.create!(category_id: rand(1..10))
     end
   end
 
@@ -48,7 +52,7 @@ end
   end
 
   3.times do
-    version.categories.create!(name: Faker::StarWars.planet)
+    version.categorizations.create!(category_id: rand(1..10) )
   end
 end
 
