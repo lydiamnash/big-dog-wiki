@@ -1,7 +1,8 @@
 class VersionsController < ApplicationController
 
   def index
-    @all_versions = Version.where(article_id: params[:article_id])
+    @most_recent_article_versions = Article.all_current_versions
+    @all_versions = Version.where(article_id: params[:article_id]).limit(5)
   end
 
   def show
@@ -21,8 +22,7 @@ class VersionsController < ApplicationController
       @article = Article.find(params[:article_id])
       @version = Version.new
     else
-      # Fix this
-      @error = "ASDFDFRRDFASDFASDFASDFASDF"
+      @error = "WOOF WOOF WOOF"
     end
   end
 
