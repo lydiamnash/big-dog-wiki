@@ -6,11 +6,16 @@
   width: 60%;
   height: 100%;
   background-color:rgba(0, 0, 0, 0.8);
+  border: 2px solid #FF00BF;
 }
 
 .thicker {
     font-weight: 2000;
 }
+
+.article-comments{
+  border-bottom: 5px solid #9C3108;
+  }
 
 .jumbo {
   font-size: 60px;
@@ -30,7 +35,7 @@
 }
 
 .subtitle {
-  font-size: 30px;  
+  font-size: 30px;
 }
 
 .info {
@@ -78,11 +83,17 @@ a:visited{
   padding-bottom: 600px;
 }
 
-.article-categories, .edit-article {
+.article-categories {
   padding: 30px;
   text-align: center;
   padding-left: 50px;
   border-bottom: 5px solid #9C3108;
+}
+
+.edit-article {
+  padding: 30px;
+  text-align: center;
+  padding-left: 50px;
 }
 
 .eachcat {

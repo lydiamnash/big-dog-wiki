@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 root to: 'categories#index'
 
   resources :articles do
+    resources :comments
     resources :versions
   end
 
