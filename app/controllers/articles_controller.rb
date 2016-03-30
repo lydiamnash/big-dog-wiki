@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
 
   def index
-    @q = Article.ransack(params[:q])
-    @articles = @q.result.includes(:article, :versions)
+
+    @articles = Article.all
   end
 
   def show
@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
     # flash.notice = "Article '#{article.title}' deleted!"
     article.destroy
 
-    redirect_to action: "index"
+    redirect_to '/'
   end
 
   # def edit

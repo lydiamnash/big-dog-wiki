@@ -3,17 +3,20 @@
 </div>
 
 
-
-
-
-  <% if @all_versions %>
-    <div class="subtitle thicker">
-      <% @all_versions.each do |version| %>
-
-        <!-- Date/time needs formatting -->
-      <div class="thicker border-bot medium-width medium-pad" > 
-        <li><%= version.title %> <%= link_to 'View here', article_version_path(version.article_id, version)%><br> As of: <%= version.created_at %> </li>
-      </div> 
-      <% end %>
-    </div>
+<% if @all_versions %>
+<div class="subtitle thicker">
+  <% @all_versions.each do |version| %>
+  <div class="thicker border-bot medium-width medium-pad" > 
+    <span class="thicker subtitle"><%= version.title %> <%= link_to 'View here', article_version_path(version.article_id, version)%><br> As of: <%= version.created_at %> </span>
+  </div> 
   <% end %>
+</div>
+<% end %>
+
+<% if current_user.clearance == "admin" || current_user.clearance == "moderator"%>
+  <span class="thicker"> Admin privileges: </span>
+  <%= link_to "Delete", article_version_path(version.article_id, version), method: :delete  %>
+<% end %>
+
+
+

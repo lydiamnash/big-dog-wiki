@@ -9,6 +9,11 @@
 
   <span class="article-editor info thicker"> Author: <%= @version.editor.username %> </span>
 
+  <% if current_user.clearance == "admin" || current_user.clearance == "moderator"%>
+    <span class="thicker"> Admin privileges: </span>
+    <%= link_to "Delete", article_version_path(@version.article_id, @version), method: :delete  %>
+  <% end %>
+  <br><br>
 
   <div class="article-categories border-bot">
 

@@ -5,5 +5,4 @@ module VersionsHelper
     source_urls.join(' ')
   end
 
-
 end

@@ -41,6 +41,19 @@ class VersionsController < ApplicationController
     end
   end
 
+  def destroy
+    version = Version.find(params[:id])
+    article = Article.find(params[:article_id])
+    if article.versions.count == 1
+      version.destroy
+      article.destroy
+      redirect_to '/'
+    else
+      version.destroy
+      redirect_to action: "index"
+    end
+  end
+
   private
   def version_params
     params.require(:version).permit(:title, :content, :published, :categories, :all_sources)

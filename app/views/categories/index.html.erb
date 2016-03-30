@@ -12,7 +12,7 @@
 
           <!-- Date/time needs formatting -->
 
-          <li><%= featured_article.title %> <%= link_to 'View here', article_version_path(featured_article.article_id, featured_article)%> </li>
+          <li><%= featured_article.title %> <%= link_to 'View here', article_path(featured_article.article_id)%> </li>
 
         <% end %>
       </ul>
@@ -30,7 +30,5 @@
     <% end %>
   </div>
 
-
-  <%= link_to " Create a New Category ", new_category_path, class: "new_category" %>
 
 </div>

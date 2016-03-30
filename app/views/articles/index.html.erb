@@ -1,6 +1,7 @@
 <div class="articles-container see-through">
   <div class="title thicker" >All Articles</div>
 
+
   <table id="articles">
     <tr>
     <th><%= sort_link @articles, :title, "Title" %></th>
@@ -14,6 +15,7 @@
     </tr>
     <% end %>
   </table>
+
 
   <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
 </div>
