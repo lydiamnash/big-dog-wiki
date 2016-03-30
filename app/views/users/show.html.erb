@@ -6,7 +6,7 @@
   <% if @user.versions %>
     <div class="cat-arts">
       <% @user.versions.where(published: false).each do |version| %>
-        <%= link_to version.title, version_path(version), class: "each-version thicker info" %>
+        <%= link_to version.title, version_path(version), class: "each-version thicker info" %><br>
       <% end %>
     </div>
   <% end %>
@@ -20,28 +20,28 @@
     <% if @user.versions %>
       <div class="cat-arts">
         <% @user.versions.where(published: true).each do |version| %>
-          <%= link_to version.title, article_version_path(version.article_id, version), class: "each-version thicker info" %>
+          <%= link_to version.title, article_version_path(version.article_id, version), class: "each-version thicker info" %><br>
         <% end %>
       </div>
     <% end %>
 
   </div>
+  <% if current_user.clearance == "admin" && @user.id == current_user.id%>
+    <div class="user-box subtitle thicker">
 
-  <div class="user-box subtitle thicker">
-    <% if current_user.clearance == "admin" %>
-      <br><br>
-      <h3>Users:</h3>
-      <ul>
-        <% User.all.each do |user| %>
-          <li><%= user.username %></li>
-          <% if user.clearance == "moderator" %>
-            <a href="#">Demote to editor</a>
-          <% if else user.clearance == "editor"%>
-            <a href="#">Promote to moderator</a>
+        <h3>Users:</h3>
+        <ul>
+          <% User.all.each do |user| %>
+            <% if user.clearance == "moderator" %>
+              <li><%= link_to user.username, user_path(user) %></li>
+              <%= link_to("Demote to editor", user_path(@user, clearance: "editor", ch_user_id: user.id), :method => :put) %><br><br>
+            <% elsif user.clearance == "editor"%>
+              <li><%= link_to user.username, user_path(user) %></li>
+              <%= link_to("Promote to moderator", user_path(@user, clearance: "moderator", ch_user_id: user.id), :method => :put) %><br><br>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
+        </ul>
 
+    </div>
+  <% end %>
 </div>

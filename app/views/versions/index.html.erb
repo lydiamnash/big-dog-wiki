@@ -7,7 +7,7 @@
 
       <li><%= version.title %> <%= link_to 'View here', article_version_path(version.article_id, version)%>, As of: <%= version.created_at %> </li>
 
-      <% if current_user.clearance == "admin" %>
+      <% if current_user.clearance == "admin" || current_user.clearance == "moderator"%>
         <span class="thicker"> Admin privileges: </span>
         <%= link_to "Delete", article_version_path(version.article_id, version), method: :delete  %>
       <% end %>

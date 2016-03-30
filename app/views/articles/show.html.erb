@@ -4,7 +4,7 @@
   <span class="page-title title thicker"> Article: <%= @current_version.title %> </span>
   <span class="article-editor info thicker"> Author: <%= @current_version.editor.username %> </span>
 
-  <% if current_user.clearance == "admin" %>
+  <% if current_user.clearance == "admin" || current_user.clearance == "moderator"%>
     <br><br>
     <span class="thicker"> Admin privileges: </span>
     <%= link_to "Delete", article_path(@current_version.article), method: :delete  %>
