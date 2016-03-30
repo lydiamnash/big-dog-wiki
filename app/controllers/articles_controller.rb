@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
     @current_version = Article.find(params[:id]).latest_version
+    @article_comments = Article.find(params[:id]).comments
     doc = Nokogiri::HTML.fragment(@current_version.content)
     @sections = []
     doc.css('h3').each do |h3|

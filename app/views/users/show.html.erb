@@ -1,0 +1,29 @@
+<div class="user-container see-through center">
+  <span class="page-title title thicker"> <%= @user.username %>'s User Page </span><br><br>
+
+  <div class="user-box subtitle thicker"> <%= @user.username %>'s Unpublished Work: 
+
+  <% if @user.versions %>
+    <div class="cat-arts">
+      <% @user.versions.where(published: false).each do |version| %>
+        <%= link_to version.title, version_path(version), class: "each-version thicker info" %>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+
+
+
+
+  <div class="user-box subtitle thicker"> <%= @user.username %>'s Published Work: 
+  
+    <% if @user.versions %>
+      <div class="cat-arts">
+        <% @user.versions.where(published: true).each do |version| %>
+          <%= link_to version.title, article_version_path(version.article_id, version), class: "each-version thicker info" %>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

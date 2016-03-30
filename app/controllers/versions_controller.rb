@@ -45,7 +45,6 @@ class VersionsController < ApplicationController
   private
   def version_params
     params.require(:version).permit(:title, :content, :published, :categories, :all_sources)
-
   end
 
 end

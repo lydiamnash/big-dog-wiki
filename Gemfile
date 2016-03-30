@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-gem 'ruby', '2.0.0'
+
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -30,6 +31,10 @@ gem 'faker', '~> 1.6.3'
 gem 'bcrypt', '~> 3.1.7'
 gem 'ckeditor_rails'
 gem 'paperclip'
+
+gem 'puma'
+gem 'rails_12factor'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -39,6 +44,7 @@ gem 'paperclip'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do

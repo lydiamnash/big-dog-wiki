@@ -6,9 +6,12 @@ class Version < ActiveRecord::Base
   has_many :categories, through: :categorizations
   has_many :sources
 
+  validates :title, :content, :article, :editor, {presence: true}
+
   def all_sources=(new_sources)
     new_sources.split(' ').each do |source|
       sources.new(url: source)
     end
   end
+
 end

@@ -18,6 +18,14 @@
   color: white;
  }
 
+.bg {
+  background-image: image-url("bigger-dog.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-attachment: fixed;
+}
+
   li {
     list-style-type: none;
   }

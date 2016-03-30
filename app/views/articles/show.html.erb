@@ -1,7 +1,7 @@
 <div class="article-container see-through center">
 
 
-  <span class="article-title title thicker"> Article: <%= @current_version.title %> </span>
+  <span class="page-title title thicker"> Article: <%= @current_version.title %> </span>
 
 
 
@@ -34,6 +34,30 @@
   </div>
 
   <div class="article-content content"><%= @current_version.content.html_safe %></div>
+
+  <div class="article-comments content">
+
+    <h2> Comments: </h2>
+    <ul>
+
+      <% @article_comments.each_with_index do |comment, index| %>
+
+        <li><%= (index + 1).to_s %>: <%=comment.content.html_safe %></li>
+        <li>Commentor: <%=comment.user.username %></li><br>
+
+      <% end %>
+    </ul>
+
+    <% if current_user %>
+      <p class="new-comment info thicker">
+        <%= link_to 'New Comment', new_article_comment_path(@current_version.article_id)%>
+      </p>
+
+    <% else %>
+      <p>Log in to comment!</p>
+    <% end %>
+
+  </div>
 
   <div class="sources">
     <span class="subtitle thicker">Sources:</span><br><br>
