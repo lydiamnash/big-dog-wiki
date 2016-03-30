@@ -5,4 +5,6 @@ class Version < ActiveRecord::Base
   has_many :categorizations
   has_many :categories, through: :categorizations
   has_many :sources
+
+  validates :title, :content, :article, :editor, {presence: true}
 end

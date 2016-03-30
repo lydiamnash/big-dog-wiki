@@ -1,15 +1,16 @@
 # big-dog-wiki
 
+[![Build Status](https://travis-ci.org/lydiamnash/big-dog-wiki.svg?branch=master)](https://travis-ci.org/lydiamnash/big-dog-wiki)
 
 # Notes
-Client Project 
+Client Project
 TEAM F MY F
 
 * Wiki site
 * Anyone can access and make a collection of articles for a group. ie. if they like cards, they can make pages for that.
 * User roles
 * guest
-* administrator - BIG DOG - with deleting access 
+* administrator - BIG DOG - with deleting access
 * other administrators selected by big dog
 * author/regular user - create, edit, delete, update
 * I want user authentication with a username
@@ -26,7 +27,7 @@ TEAM F MY F
 * Article Status options
 * Drafts
 * Published
-* Published but needs more information 
+* Published but needs more information
 * Design
 * Gradients
 * Teal
