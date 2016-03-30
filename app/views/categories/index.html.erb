@@ -13,7 +13,7 @@
 
           <!-- Date/time needs formatting -->
 
-          <li><%= featured_article.title %> <%= link_to 'View here', article_version_path(featured_article.article_id, featured_article)%> </li>
+          <li><%= featured_article.title %> <%= link_to 'View here', article_path(featured_article.article_id)%> </li>
 
         <% end %>
       </ul>

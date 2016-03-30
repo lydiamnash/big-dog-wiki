@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
+    @articles = Article.all
     # @search = Article.ransack(params[:q])
     # @articles = @search.result(distinct: true)
   end
@@ -53,7 +54,7 @@ class ArticlesController < ApplicationController
     # flash.notice = "Article '#{article.title}' deleted!"
     article.destroy
 
-    redirect_to action: "index"
+    redirect_to '/'
   end
 
   # def edit
