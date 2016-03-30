@@ -21,8 +21,7 @@ class VersionsController < ApplicationController
       @article = Article.find(params[:article_id])
       @version = Version.new
     else
-      # Fix this
-      @error = "ASDFDFRRDFASDFASDFASDFASDF"
+      @error = "WOOF WOOF WOOF"
     end
   end
 
