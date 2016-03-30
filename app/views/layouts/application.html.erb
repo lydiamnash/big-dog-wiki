@@ -11,16 +11,18 @@
 
 
 
- <div id = "header" class="see-through nav info"><a href = "/">
+ <div id = "header" class="area-heading see-through nav grad border-bot thicker info"><a href = "/">
  <span class="jumbo thicker">Big Dog Wiki</span></a>
-  <a href = "/articles/new">new</a> |
+  <div class="info">
+    <a href = "/articles/new">new article</a> |
   <!-- <a href = ""></a> |
   <a href = ""></a> | -->
-  <%if current_user%>
-  <a href = "/users/<%=current_user.id%>"><%=current_user.username%></a> | <a href = "/logout">logout</a>
-  <%else%>
-  <a href = "/login">login</a> | <a href = "/signup">register</a>
-  <%end%>
+    <%if current_user%>
+    <a href = "/users/<%=current_user.id%>"><%=current_user.username%></a> | <a href = "/logout">logout</a>
+    <%else%>
+    <a href = "/login">login</a> | <a href = "/signup">register</a>
+    <%end%>
+  </div>
 </div>
 
 <%= yield %>

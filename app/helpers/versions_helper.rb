@@ -5,8 +5,4 @@ module VersionsHelper
     source_urls.join(' ')
   end
 
-  def version_categories(article)
-
-  end
-
 end

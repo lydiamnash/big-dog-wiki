@@ -2,6 +2,20 @@
   <div class="title thicker" >All Articles</div>
 
 
+  <table id="articles">
+    <tr>
+    <th><%= sort_link @articles, :title, "Title" %></th>
+    <th><%= sort_link @articles, :updated_at, "Last Update Date" %></th>
+    </tr>
+    <%= @articles.class %>
+    <% @articles.each do |article| %>
+    <tr>
+      <td> <a href="articles/<%= article.id %>"> <%= article.title %> </a></td>
+      <td> <%= article.updated_at %></td>
+    </tr>
+    <% end %>
+  </table>
+
 
   <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
 </div>

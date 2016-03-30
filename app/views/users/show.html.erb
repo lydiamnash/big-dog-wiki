@@ -6,7 +6,8 @@
   <% if @user.versions %>
     <div class="cat-arts">
       <% @user.versions.where(published: false).each do |version| %>
-        <%= link_to version.title, version_path(version), class: "each-version thicker info" %><br>
+        <%= link_to version.title, article_version_path(version.article_id, version), class: "each-version thicker info" %><br>
+
       <% end %>
     </div>
   <% end %>

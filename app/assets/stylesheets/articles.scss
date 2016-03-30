@@ -12,11 +12,9 @@
 .thicker {
     font-weight: 2000;
 }
-
-.article-comments{
-  border-bottom: 5px solid #9C3108;
-  }
-
+.orange {
+  color: orange;
+}
 .jumbo {
   font-size: 60px;
   border-width: 100%;
@@ -26,9 +24,15 @@
 .nav {
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 5px solid #9C3108;
-}
 
+}
+.grad {
+  background: #9C3108; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #9C3108, #1c86a1); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #9C3108, #1c86a1); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #9C3108, #1c86a1); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #9C3108, #1c86a1); /* Standard syntax */
+}
 .title {
   font-size: 40px;
   padding-top: 30px;
@@ -56,14 +60,14 @@ a:hover {
 }
 
 a:link {
-  color: orange;
+  color: #1c86a1;
   text-decoration: none;
   font-weight: 2000;
 }
 
 a:visited{
 
-  color: teal;
+  color: orange;
   text-decoration: none;
 }
 .page-title  {
@@ -71,12 +75,12 @@ a:visited{
   text-align: center;
   padding-left: 50px;
 }
-
+.border-bot {
+  border-bottom: 5px solid #9C3108;
+}
 .article-content {
   padding: 30px;
   padding-left: 50px;
-  border-bottom: 5px solid #9C3108;
-
 }
 .article-container {
   padding-top: 40px;
@@ -87,7 +91,6 @@ a:visited{
   padding: 30px;
   text-align: center;
   padding-left: 50px;
-  border-bottom: 5px solid #9C3108;
 }
 
 .edit-article {
@@ -123,4 +126,69 @@ a:visited{
 
 .feature {
   border-bottom: 5px solid #9C3108;
+}
+
+.medium-width {
+  width: 400px; 
+}
+
+.medium-pad {
+  padding: 15px;
+}
+
+.button {
+    background-color: #9C3108; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+ .cont-right {
+float: right;
+width: 15em;
+padding: 2em;
+}
+.section-heading {
+font-size: 1.25em;
+}#1c86a1
+orange
+
+.separated {
+border-bottom: 1px dashed #ccc;
+}
+
+.no-margin {
+margin: 0;
+}
+
+.item-list {
+padding: 0;
+list-style: none;
+}
+
+.item-list–item {
+margin: 1em 0;
+padding-bottom: .5em;
+}
+
+.area-heading {
+font-size: 1em;
+}
+
+.area-heading a {
+color: orange;
+text-decoration: none;
+}
+
+a:hover {
+color: #1c86a1;
+}
+
+.item-content {
+margin: .5em 0;
+font-size: .938em;
+line-height: 1.188em;
 }

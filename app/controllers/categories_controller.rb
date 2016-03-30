@@ -2,9 +2,8 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
-    @category_query = Category.ransack(params[:q])
-    @search = Article.ransack(params[:q])
-    @articles = @search.result(distinct: true)
+    @q = Version.ransack(params[:q])
+    @articles = @q.result(distinct: true)
     @featured_articles = Article.five_most_recent
   end
 
@@ -30,5 +29,7 @@ class CategoriesController < ApplicationController
   def create
 
   end
+
+
 
 end
