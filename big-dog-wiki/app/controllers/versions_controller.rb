@@ -30,15 +30,7 @@ class VersionsController < ApplicationController
     if current_user
       @article = Article.find(params[:article_id])
 
-      v_params = version_params
-      source_params = v_params.delete(:sources)
-      p v_params
-      @version = @article.versions.new(v_params)
-
-      source_params.split(' ').each do |source|
-        @version.sources.new(url: source)
-      end
-
+      @version = @article.versions.new(version_params)
       @version.editor = current_user
 
       if @version.save
@@ -52,7 +44,7 @@ class VersionsController < ApplicationController
 
   private
   def version_params
-    params.require(:version).permit(:title, :content, :published, :categories, :sources)
+    params.require(:version).permit(:title, :content, :published, :categories, :all_sources)
 
   end
 

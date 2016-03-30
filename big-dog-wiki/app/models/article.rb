@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
   has_many :versions
 
   def latest_version
-    self.versions.order("created_at desc").where(published: true).first
+    self.versions.order("updated_at desc").where(published: true).first
   end
 
 end

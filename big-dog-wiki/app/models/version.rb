@@ -5,4 +5,10 @@ class Version < ActiveRecord::Base
   has_many :categorizations
   has_many :categories, through: :categorizations
   has_many :sources
+
+  def all_sources=(new_sources)
+    new_sources.split(' ').each do |source|
+      sources.new(url: source)
+    end
+  end
 end
