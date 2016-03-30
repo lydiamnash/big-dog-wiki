@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
 
   def index
-    # @search = Article.ransack(params[:q])
-    # @articles = @search.result(distinct: true)
+    @search = Article.ransack(params[:q])
+    @articles = @search.result(distinct: true)
   end
 
   def show

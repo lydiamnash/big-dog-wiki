@@ -70,6 +70,7 @@
 
   <% if current_user %>
     <p class="edit-article info thicker"> <%= link_to 'Edit Article', new_article_version_path(@current_version.article_id)%></p>
+    
   <% else %>
     <br>
     <br>
