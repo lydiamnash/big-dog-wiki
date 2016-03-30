@@ -18,7 +18,6 @@ class VersionsController < ApplicationController
 
   def new
    if current_user
-      # Need to populate form with the information
       @article = Article.find(params[:article_id])
       @version = Version.new
     else
@@ -30,6 +29,7 @@ class VersionsController < ApplicationController
   def create
     if current_user
       @article = Article.find(params[:article_id])
+
       @version = @article.versions.new(version_params)
       @version.editor = current_user
 
@@ -44,8 +44,7 @@ class VersionsController < ApplicationController
 
   private
   def version_params
-    # May need updated to :version?
-    params.require(:version).permit(:title, :content, :published)
+    params.require(:version).permit(:title, :content, :published, :categories, :all_sources)
   end
 
 end
