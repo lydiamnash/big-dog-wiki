@@ -28,8 +28,8 @@ class ArticlesController < ApplicationController
 
   def create
     if current_user
-
       @article = Article.new(creator: current_user)
+
       @new_version = @article.versions.new(article_params)
       @new_version.editor = current_user
 
@@ -71,7 +71,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:version).permit(:title, :content, :published)
+    params.require(:version).permit(:title, :content, :published, :all_sources)
   end
 
 end
