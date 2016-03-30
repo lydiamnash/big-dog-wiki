@@ -7,7 +7,7 @@
 
   <span class="article-editor info thicker"> Author: <%= @current_version.editor.username %> </span>
 
-  <div class="article-categories">
+  <div class="article-categories border-bot">
 
     <span class="info thicker"> Categories: </span>
 
@@ -33,23 +33,22 @@
 
   </div>
 
-  <div class="article-content content"><%= @current_version.content.html_safe %></div>
+  <div class="article-content border-bot content"><%= @current_version.content.html_safe %></div>
 
-  <div class="article-comments content">
+  <div class="border-bot content">
 
-    <h2> Comments: </h2>
-    <ul>
+    <h2 class="subtitle"> Comments: </h2>
 
       <% @article_comments.each_with_index do |comment, index| %>
-
-        <li><%= (index + 1).to_s %>: <%=comment.content.html_safe %></li>
-        <li>Commentor: <%=comment.user.username %></li><br>
-
+        <div class="border-bot medium-width medium-pad">
+          <span><%= (index + 1).to_s %>: <%=comment.content.html_safe %></span>
+          <span>Commentor: <%=comment.user.username %></span><br>
+        </div>
       <% end %>
-    </ul>
+
 
     <% if current_user %>
-      <p class="new-comment info thicker">
+      <p class="button subtitle">
         <%= link_to 'New Comment', new_article_comment_path(@current_version.article_id)%>
       </p>
 
