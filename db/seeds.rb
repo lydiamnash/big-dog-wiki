@@ -13,6 +13,10 @@
   3.times do
     article = Article.create!(creator: user)
 
+    3.times do
+      Comment.create!(content: Faker::StarWars.quote, user: user, article: article)
+    end
+
     content_join = "<img src='#{Faker::Avatar.image}'>"
     for i in 1..5
       faker_word = Faker::Hipster.word
@@ -22,6 +26,7 @@
     end
 
     version = article.versions.create!(title: Faker::Lorem.word, content: content_join, published: true, article: article, editor: user)
+
 
     3.times do
       version.sources.create!(url: Faker::Internet.url)
