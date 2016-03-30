@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @category_query = Category.ransack(params[:q])
-    @search = Article.ransack(params[:q])
+    @search = Version.ransack(params[:q])
     @articles = @search.result(distinct: true)
   end
 

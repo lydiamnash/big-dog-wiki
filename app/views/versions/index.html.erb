@@ -1,12 +1,15 @@
-<% if @all_versions %>
+<div class="title thicker">
+  All Versions:
+</div>
 
-  <ul>
-    <% @all_versions.each do |version| %>
+  <% if @all_versions %>
+    <div class="subtitle thicker">
+      <% @all_versions.each do |version| %>
 
-      <!-- Date/time needs formatting -->
-
-      <li><%= version.title %> <%= link_to 'View here', article_version_path(version.article_id, version)%>, As of: <%= version.created_at %> </li>
-
-    <% end %>
-  </ul>
-<% end %>
+        <!-- Date/time needs formatting -->
+      <div class="thicker border-bot medium-width medium-pad" > 
+        <li><%= version.title %> <%= link_to 'View here', article_version_path(version.article_id, version)%><br> As of: <%= version.created_at %> </li>
+      </div> 
+      <% end %>
+    </div>
+  <% end %>
