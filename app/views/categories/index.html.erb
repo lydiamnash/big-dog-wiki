@@ -5,7 +5,18 @@
   </div>
   <div class="feature thicker subtitle">
     Featured Article:
+    <% if @featured_articles %>
 
+      <ul>
+        <% @featured_articles.each do |featured_article| %>
+
+          <!-- Date/time needs formatting -->
+
+          <li><%= featured_article.title %> <%= link_to 'View here', article_version_path(featured_article.article_id, featured_article)%> </li>
+
+        <% end %>
+      </ul>
+    <% end %>
   </div>
 
   <div class="indextitle thicker title">All Categories</div>
@@ -23,4 +34,3 @@
   <%= link_to " Create a New Category ", new_category_path, class: "new_category" %>
 
 </div>
-
