@@ -21,20 +21,25 @@ class ArticlesController < ApplicationController
   def new
     if current_user
       @article = Article.new
+      @version = @article.versions.new
     else
-      @error = "ASDFDFRRDFASDFASDFASDFASDF"
+      @error = "WOOF WOOF WOOF"
     end
   end
 
   def create
     if current_user
-
       @article = Article.new(creator: current_user)
+
       @new_version = @article.versions.new(article_params)
       @new_version.editor = current_user
 
       if @article.save && @new_version.save
-        redirect_to article_path(@article)
+        if @new_version.published == true
+          redirect_to article_path(@article)
+        else
+          redirect_to '/'
+        end
       else
         # Add logic to accoutn validations
       end
@@ -67,7 +72,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:version).permit(:title, :content)
+    params.require(:version).permit(:title, :content, :published, :all_sources)
   end
 
 end
