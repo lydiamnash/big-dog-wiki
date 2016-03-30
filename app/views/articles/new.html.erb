@@ -1,9 +1,11 @@
-<h1> Create New Article!!!! </h1>
-<% if @error %>
-  <br>
-  <br>
-  <%= @error %>
-  <img src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr02/2012/12/15/17/anigif_enhanced-buzz-2771-1355609732-2.gif">
-<% else %>
-  <%= render partial: 'form' %>
-<% end %>
+ <div class="new-article-container see-through">
+  <div class="title"> Create New Article!!!! </div>
+  <% if @error %>
+    <br>
+    <br>
+    <%= @error %>
+    <img src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr02/2012/12/15/17/anigif_enhanced-buzz-2771-1355609732-2.gif">
+  <% else %>
+    <%= render partial: 'form' %>
+  <% end %>
+</div> 
