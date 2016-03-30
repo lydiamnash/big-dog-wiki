@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
 
   def index
-    @search = Article.ransack(params[:q])
-    @articles = @search.result(distinct: true)
+    @q = Article.ransack(params[:q])
+    @articles = @q.result.includes(:article, :versions)
   end
 
   def show

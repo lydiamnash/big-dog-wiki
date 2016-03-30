@@ -13,5 +13,10 @@ class Version < ActiveRecord::Base
       sources.new(url: source)
     end
   end
+  
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%")
+    where("content LIKE ?", "%#{search}%")
+  end
 
 end
