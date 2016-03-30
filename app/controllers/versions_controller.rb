@@ -1,8 +1,7 @@
 class VersionsController < ApplicationController
 
   def index
-    @most_recent_article_versions = Article.all_current_versions
-    @all_versions = Version.where(article_id: params[:article_id]).limit(5)
+    @all_versions = Version.where(article_id: params[:article_id])
   end
 
   def show

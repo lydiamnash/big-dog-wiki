@@ -21,7 +21,10 @@ class Article < ActiveRecord::Base
   end
 
   def self.five_most_recent
-    Article.all_current_versions.sort_by(updated_at:)
+    sorted_articles = Article.all_current_versions.sort_by! do |article|
+      article.updated_at
+    end
+    return sorted_articles.reverse.slice(0,5)
   end
 
 end
